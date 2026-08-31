@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Finite Crew Network | Steady Hotel Work, Paid Biweekly</title>
+<meta name="description" content="Finite Reimaging is building a network of small skilled crews for steady hotel repair and remodel work. Biweekly pay, repeat work within 75-100 miles of home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16273f;
+    --navy-deep:#0e1a2c;
+    --orange:#f26a1b;
+    --orange-dark:#d4550e;
+    --paper:#f6f4ef;
+    --steel:#8b95a3;
+    --line:#dcd8cf;
+    --ink:#1c2735;
+    --ok:#2e7d4f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .stripe{
+    height:10px;
+    background:repeating-linear-gradient(-45deg, var(--orange) 0 18px, var(--navy) 18px 36px);
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px;}
+
+  /* HERO */
+  header{background:var(--navy);color:#fff;padding:44px 0 52px;}
+  .brand{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.8rem;
+    color:var(--steel);
+    margin-bottom:26px;
+  }
+  .brand strong{color:#fff;}
+  h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    line-height:1.04;
+    font-size:clamp(2.2rem, 7vw, 3.4rem);
+    letter-spacing:.01em;
+  }
+  h1 .hl{color:var(--orange);}
+  .sub{
+    margin-top:18px;
+    font-size:1.05rem;
+    color:#c7cfda;
+    max-width:56ch;
+  }
+  .cta{
+    display:inline-block;
+    margin-top:28px;
+    background:var(--orange);
+    color:#fff;
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:1rem;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:4px;
+    transition:background .15s ease;
+  }
+  .cta:hover{background:var(--orange-dark);}
+  .cta:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+  /* PROOF POINTS */
+  .proof{background:var(--navy-deep);color:#fff;padding:8px 0 30px;}
+  .proof ul{list-style:none;display:grid;gap:14px;padding-top:22px;}
+  .proof li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:1rem;color:#dbe2ec;
+  }
+  .proof li b{color:#fff;}
+  .tick{
+    flex:0 0 auto;
+    width:22px;height:22px;margin-top:2px;
+    background:var(--orange);
+    clip-path:polygon(14% 44%, 0 59%, 40% 100%, 100% 16%, 85% 2%, 40% 70%);
+  }
+
+  /* WORK LIST */
+  section.work{padding:44px 0 8px;}
+  .kicker{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    color:var(--orange-dark);
+    margin-bottom:10px;
+  }
+  h2{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:1.5rem;
+    margin-bottom:12px;
+  }
+  .work p{max-width:60ch;color:#41506a;}
+  .trades{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;
+  }
+  .trades span{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-size:.82rem;
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--orange);
+    padding:7px 12px;
+    border-radius:3px;
+    color:var(--navy);
+  }
+
+  /* FORM — styled as a work order ticket */
+  section.apply{padding:40px 0 64px;}
+  .ticket{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    box-shadow:0 3px 14px rgba(20,35,60,.08);
+    overflow:hidden;
+  }
+  .ticket-head{
+    background:var(--navy);
+    color:#fff;
+    padding:16px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .ticket-head h2{margin:0;font-size:1.15rem;color:#fff;}
+  .stamp{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    font-size:.7rem;
+    letter-spacing:.1em;
+    color:var(--orange);
+    border:2px solid var(--orange);
+    border-radius:3px;
+    padding:4px 8px;
+    transform:rotate(-3deg);
+    white-space:nowrap;
+  }
+  form{padding:24px 22px 28px;display:grid;gap:18px;}
+  .row{display:grid;gap:18px;}
+  @media(min-width:560px){ .row.two{grid-template-columns:1fr 1fr;} }
+  label{
+    display:block;
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    font-size:.78rem;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .req{color:var(--orange-dark);}
+  input[type=text],input[type=tel],input[type=email],select,textarea{
+    width:100%;
+    font:inherit;
+    font-size:1rem;
+    padding:11px 12px;
+    border:1px solid #c9c4b9;
+    border-radius:4px;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  input:focus-visible,select:focus-visible,textarea:focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:1px;
+    border-color:var(--orange);
+  }
+  fieldset{border:1px solid var(--line);border-radius:4px;padding:14px 14px 10px;}
+  legend{
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+    font-size:.78rem;
+    color:var(--navy);
+    padding:0 6px;
+  }
+  .checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+  .checks label{
+    display:flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;
+    text-transform:none;
+    letter-spacing:0;
+    font-size:.92rem;
+    font-weight:500;
+    margin:0;
+    cursor:pointer;
+  }
+  input[type=checkbox],input[type=radio]{
+    width:18px;height:18px;accent-color:var(--orange);flex:0 0 auto;cursor:pointer;
+  }
+  .radios{display:flex;gap:18px;flex-wrap:wrap;}
+  .radios label{display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0;font-size:.92rem;font-weight:500;margin:0;cursor:pointer;}
+  .hint{font-size:.82rem;color:#6b7686;margin-top:5px;}
+  .xtrain{
+    background:#fdf2e9;
+    border:1px solid #f3cdae;
+    border-radius:4px;
+    padding:13px 14px;
+    display:flex;gap:10px;align-items:flex-start;
+  }
+  .xtrain input{margin-top:2px;}
+  .xtrain div{font-size:.92rem;}
+  .xtrain b{color:var(--navy);}
+  button[type=submit]{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:1.05rem;
+    background:var(--orange);
+    color:#fff;
+    border:0;
+    border-radius:4px;
+    padding:16px;
+    cursor:pointer;
+    transition:background .15s ease;
+  }
+  button[type=submit]:hover{background:var(--orange-dark);}
+  button[type=submit]:focus-visible{outline:3px solid var(--navy);outline-offset:2px;}
+  .fine{font-size:.8rem;color:#6b7686;text-align:center;}
+  .success{
+    display:none;
+    padding:34px 22px;
+    text-align:center;
+  }
+  .success h3{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;text-transform:uppercase;
+    color:var(--ok);
+    font-size:1.3rem;
+    margin-bottom:8px;
+  }
+  footer{
+    background:var(--navy-deep);
+    color:var(--steel);
+    text-align:center;
+    padding:26px 20px 30px;
+    font-size:.82rem;
+  }
+  footer b{color:#fff;font-family:'Oswald',sans-serif;letter-spacing:.1em;text-transform:uppercase;font-weight:500;}
+</style>
+</head>
+<body>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap">
+    <p class="brand"><strong>Finite Reimaging</strong> &nbsp;·&nbsp; A CAMP Construction Company</p>
+    <h1>Steady hotel work.<br><span class="hl">Paid every two weeks.</span><br>No bidding wars.</h1>
+    <p class="sub">We manage repair and remodel work at 400+ extended-stay hotels nationwide, and we're building a network of small, skilled crews who want consistent work close to home.</p>
+    <a class="cta" href="#apply">Get on the list</a>
+  </div>
+</header>
+
+<div class="proof">
+  <div class="wrap">
+    <ul>
+      <li><span class="tick" aria-hidden="true"></span><span><b>Biweekly pay.</b> Submit your invoice, get paid on the next cycle. We built the program around your cash flow.</span></li>
+      <li><span class="tick" aria-hidden="true"></span><span><b>Repeat work, close to home.</b> Jobs within 75&ndash;100 miles of your base. Crews who perform get first call, again and again.</span></li>
+      <li><span class="tick" aria-hidden="true"></span><span><b>We hand you the playbook.</b> Occupied-hotel work has rules most contractors never learn. We train you on them and feed you the jobs.</span></li>
+      <li><span class="tick" aria-hidden="true"></span><span><b>A named contact.</b> A real person at Finite who confirms scope and materials before you arrive and answers when you call.</span></li>
+    </ul>
+  </div>
+</div>
+
+<section class="work">
+  <div class="wrap">
+    <p class="kicker">The Work</p>
+    <h2>Hotel rooms, one property at a time</h2>
+    <p>Clear scope before you arrive. Best fit: 2&ndash;3 person crews with their own tools and transportation, insured or ready to get insured (we'll tell you exactly what's needed).</p>
+    <div class="trades" role="list">
+      <span role="listitem">Drywall</span>
+      <span role="listitem">Paint</span>
+      <span role="listitem">Flooring</span>
+      <span role="listitem">Tub &amp; Surround</span>
+      <span role="listitem">Doors</span>
+      <span role="listitem">Cabinets &amp; Counters</span>
+      <span role="listitem">Remediation</span>
+    </div>
+  </div>
+</section>
+
+<section class="work" style="padding-top:36px;">
+  <div class="wrap">
+    <p class="kicker">The Deal</p>
+    <h2>Fast turnaround is the whole game</h2>
+    <p>Hotels need work done quickly, and that's exactly why this work is steady. When we send you a work order, we need you on it within <b>10 days</b>. Can't get to it that fast? No problem, no penalty. Just turn it down and stay honest about your schedule; we'd rather hear no than get a no-show. But here's the trade: crews who take work and turn it around fast are the crews we keep busy. Do good work, hit your dates, and our goal becomes keeping <b>your schedule filled with our jobs</b> so you're not out chasing the next one.</p>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="ticket-head">
+        <h2>Crew Intake</h2>
+        <span class="stamp">Paid Biweekly</span>
+      </div>
+
+      <form id="intakeForm" novalidate>
+        <div class="row two">
+          <div>
+            <label for="name">Your name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="company">Company name (if any)</label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="row two">
+          <div>
+            <label for="phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="row two">
+          <div>
+            <label for="city">Home base (city, state) <span class="req">*</span></label>
+            <input type="text" id="city" name="city" required>
+          </div>
+          <div>
+            <label for="radius">How far will you travel?</label>
+            <select id="radius" name="radius">
+              <option>Up to 50 miles</option>
+              <option selected>Up to 100 miles</option>
+              <option>Over 100 miles</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="crew">Crew size</label>
+          <select id="crew" name="crew">
+            <option>Just me</option>
+            <option selected>2&ndash;3 people</option>
+            <option>4&ndash;5 people</option>
+            <option>6 or more</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Trades you do well</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="trades" value="drywall"> Drywall</label>
+            <label><input type="checkbox" name="trades" value="paint"> Paint</label>
+            <label><input type="checkbox" name="trades" value="flooring"> Flooring</label>
+            <label><input type="checkbox" name="trades" value="tubs"> Tubs / surrounds</label>
+            <label><input type="checkbox" name="trades" value="doors"> Doors</label>
+            <label><input type="checkbox" name="trades" value="cabinets"> Cabinets / counters</label>
+            <label><input type="checkbox" name="trades" value="tile"> Tile</label>
+            <label><input type="checkbox" name="trades" value="remediation"> Remediation</label>
+          </div>
+        </fieldset>
+
+        <div class="xtrain">
+          <input type="checkbox" id="crosstrain" name="crosstrain" value="yes">
+          <div><label for="crosstrain" style="display:inline;font-family:'Inter';text-transform:none;letter-spacing:0;font-size:.92rem;cursor:pointer;"><b>Interested in remediation cross-training?</b> We're growing our remediation work and will train proven crews who want to add it.</label></div>
+        </div>
+
+        <div>
+          <span class="label-line" id="ins-label"><label style="margin-bottom:8px;">Are you insured?</label></span>
+          <div class="radios" role="radiogroup" aria-labelledby="ins-label">
+            <label><input type="radio" name="insured" value="yes"> Yes</label>
+            <label><input type="radio" name="insured" value="no-willing" checked> Not yet, but willing</label>
+            <label><input type="radio" name="insured" value="no"> No</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="notes">Anything we should know?</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Years in the trades, hotel or apartment-turn experience, availability..."></textarea>
+        </div>
+
+        <button type="submit">Send my info</button>
+        <p class="fine">We'll call or text you within 2 business days. No spam, no obligation.</p>
+      </form>
+
+      <div class="success" id="successMsg" role="status">
+        <h3>Got it. You're on the list.</h3>
+        <p>Someone from Finite will reach out within 2 business days to talk about work in your area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Finite Reimaging</b><br>
+  A CAMP Construction Company &nbsp;·&nbsp; Serving Extended Stay properties nationwide
+</footer>
+
+<script>
+  // SUBMISSION WIRING — Web3Forms
+  // Submissions are emailed to the inbox registered with this access key.
+  // To change the destination inbox later: get a new key at web3forms.com and swap it here.
+  const WEB3FORMS_KEY = "355c6beb-3cb6-497b-8fed-60c812a663cc";
+  const FALLBACK_EMAIL = "bskvor@finiteri.com"; // used only if the API is unreachable
+
+  const form = document.getElementById('intakeForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const trades = data.getAll('trades').join(', ');
+    const summary = [
+      "Name: " + (data.get('name')||""),
+      "Company: " + (data.get('company')||""),
+      "Phone: " + (data.get('phone')||""),
+      "Email: " + (data.get('email')||""),
+      "Home base: " + (data.get('city')||""),
+      "Travel radius: " + (data.get('radius')||""),
+      "Crew size: " + (data.get('crew')||""),
+      "Trades: " + trades,
+      "Remediation cross-training interest: " + (data.get('crosstrain') ? "Yes" : "No"),
+      "Insured: " + (data.get('insured')||""),
+      "Notes: " + (data.get('notes')||"")
+    ].join("\n");
+
+    // Build the Web3Forms payload
+    const payload = new FormData();
+    payload.append("access_key", WEB3FORMS_KEY);
+    payload.append("subject", "Crew Network Application - " + (data.get('name')||"") + " (" + (data.get('city')||"") + ")");
+    payload.append("from_name", "Finite Crew Network");
+    payload.append("Name", data.get('name')||"");
+    payload.append("Company", data.get('company')||"");
+    payload.append("Phone", data.get('phone')||"");
+    payload.append("Email", data.get('email')||"");
+    payload.append("Home base", data.get('city')||"");
+    payload.append("Travel radius", data.get('radius')||"");
+    payload.append("Crew size", data.get('crew')||"");
+    payload.append("Trades", trades);
+    payload.append("Remediation cross-training interest", data.get('crosstrain') ? "Yes" : "No");
+    payload.append("Insured", data.get('insured')||"");
+    payload.append("Notes", data.get('notes')||"");
+    payload.append("botcheck", ""); // honeypot
+
+    try{
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method:"POST",
+        headers:{ "Accept":"application/json" },
+        body:payload
+      });
+      const json = await res.json();
+      if(res.ok && json.success){ showSuccess(); return; }
+    }catch(err){ /* fall through to mailto */ }
+
+    // Fallback: open the visitor's email client pre-filled
+    window.location.href = "mailto:" + FALLBACK_EMAIL
+      + "?subject=" + encodeURIComponent("Crew Network Application - " + (data.get('name')||""))
+      + "&body=" + encodeURIComponent(summary);
+    showSuccess();
+  });
+
+  function showSuccess(){
+    form.style.display = "none";
+    document.getElementById('successMsg').style.display = "block";
+    document.getElementById('successMsg').scrollIntoView({behavior:"smooth", block:"center"});
+  }
+</script>
+
+</body>
+</html>
